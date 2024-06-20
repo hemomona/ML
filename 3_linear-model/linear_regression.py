@@ -15,7 +15,7 @@ from utils.features import prepare_for_training
 class LinearRegression:
     def __init__(self, data, labels, polynomial_degree=0, sinusoid_degree=0, normalize_data=True):
         (data_processed, features_mean, features_deviation) \
-            = prepare_for_training(data, polynomial_degree=0, sinusoid_degree=0, normalize_data=True)
+            = prepare_for_training(data, polynomial_degree, sinusoid_degree, normalize_data)
 
         self.data = data_processed
         self.labels = labels
@@ -44,6 +44,7 @@ class LinearRegression:
         prediction = LinearRegression.hypothesis(self.data, self.theta)
         delta = prediction - self.labels  # delta = (m, 1)
         theta = self.theta
+        # gradient = (1 / num_example) * ((Xθ-y).T * X).T = (1 / num_example)*(X.T * (Xθ-y))
         theta = theta - alpha*(1/num_examples)*(np.dot(delta.T, self.data)).T  # np.dot((m, 1).T, (m,n)).T = (n, 1)
         self.theta = theta
 
@@ -66,7 +67,3 @@ class LinearRegression:
     def predict(self, data):
         data_processed = prepare_for_training(data, self.polynomial_degree, self.sinusoid_degree, self.normalize_data)[0]
         return LinearRegression.hypothesis(data_processed, self.theta)
-
-
-if __name__ == '__main__':
-    print('hello world')

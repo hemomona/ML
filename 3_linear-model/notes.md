@@ -1,7 +1,19 @@
-logistic regression error:
+linear regression error:
 
 $$
 J(\theta) = \frac{1}{2} \sum_{i=1}^{m} (h_\theta (x^i) - y^i)^2 = \frac{1}{2} (X\theta - y)^T(X\theta - y)
+$$
+
+Ridge regression error (with regularization):
+
+$$
+J(\theta) = \frac{1}{2} \sum_{i=1}^{m} (h_\theta (x^i) - y^i)^2 + \frac{\alpha}{2}\sum_{i=1}^{n}\theta_i^2
+$$
+
+Lasso regression error (with regularization):
+
+$$
+J(\theta) = \frac{1}{2} \sum_{i=1}^{m} (h_\theta (x^i) - y^i)^2 + \alpha\sum_{i=1}^{n}|\theta_i|
 $$
 
 $$

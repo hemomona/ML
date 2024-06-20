@@ -10,6 +10,7 @@
 # Description：
 https://blog.csdn.net/yyh2508298730/article/details/138715878 轻松学会HuggingFace模型下载与保存
 https://blog.csdn.net/weixin_43431218/article/details/135403324 【Hugggingface.co】关于huggingface.co无法访问
+https://blog.csdn.net/tangsiqi130/article/details/136815313 国内如何下载huggingface模型、数据集
 """
 import matplotlib.pyplot as plt
 import transformers
