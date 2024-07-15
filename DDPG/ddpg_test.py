@@ -14,21 +14,8 @@ import gym
 import numpy as np
 import pygame
 import torch
-from torch import nn
 
-
-class Actor(nn.Module):
-    def __init__(self, state_dim, action_dim, hidden_dim=64):
-        super(Actor, self).__init__()
-        self.fc1 = nn.Linear(state_dim, hidden_dim)
-        self.fc2 = nn.Linear(hidden_dim, hidden_dim)
-        self.fc3 = nn.Linear(hidden_dim, action_dim)
-
-    def forward(self, x):
-        x = torch.relu(self.fc1(x))
-        x = torch.relu(self.fc2(x))
-        x = torch.tanh(self.fc3(x)) * 2   # scale tanh returns (-1, 1) to (-2, 2), which is action uniform
-        return x
+from DDPG.ddpg_agent import Actor
 
 
 def process_frame(frame):

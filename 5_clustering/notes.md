@@ -1,3 +1,5 @@
+if classification can be used, clustering is no need.
+
 # K-MEANS:
 
 pros:
