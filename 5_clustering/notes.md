@@ -12,6 +12,11 @@ cons:
 - complexity is linear with sample size
 - can not find cluster with arbitrary shape
 
+## K-MEANS & KNN
+
+K-Means is unsupervised learning for clustering;
+KNN is supervised learning for classification.
+
 # DBSCAN (Density-Based Spatial Clustering of Applications with Noise):
 
 Eps: usually choose k = 2 * num_features - 1, then draw k-distance diagram, and the distance at inflection point is Eps
